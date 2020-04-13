@@ -26,7 +26,7 @@ function AppSider(props) {
                 console.log(collapsed, type);
             }}
         >
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                 <Menu.Item key="1">
                     <UserOutlined />
                     <Link to={{

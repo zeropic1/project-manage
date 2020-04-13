@@ -8,13 +8,7 @@ import {
     Switch,
     Route,
 } from 'react-router-dom'
-import {
-    UploadLocalRepo,
-    CoordinateWorkFlow,
-    GitList,
-    GithubList
-} from './git'
-import Main from './Main'
+import routes from "./routes";
 const { Content } = Layout
 
 function AppContent(props) {
@@ -22,11 +16,9 @@ function AppContent(props) {
         <Content style={{ margin: '24px 16px 0' }}>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                 <Switch>
-                    <Route exact path="/" component={Main} />
-                    <Route exact path='/git' component={GitList} />
-                    <Route exact path='/git/github' component={GithubList} />
-                    <Route exact path='/git/github/uploadLocalRepo' component={UploadLocalRepo} />
-                    <Route exact path='/git/github/coordinateWorkFlow' component={CoordinateWorkFlow} />
+                  {routes.map(({ path, Component }, key) => (
+                    <Route exact path={path} key={key} render={Component} />
+                  ))}
                 </Switch>
             </div>
         </Content>

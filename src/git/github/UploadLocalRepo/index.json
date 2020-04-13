@@ -1,0 +1,36 @@
+{
+    "steps1": {
+        "stepList": [
+            "将本地仓库初始化为git",
+            "将文件添加到本地仓库中,将它们暂存为第一次提交",
+            "提交本地仓库中暂存的文件",
+            "添加本地仓库推送到远程仓库的URL",
+            "将本地仓库的修改推送到远程仓库"
+        ],
+        "contentList": [
+            "git init",
+            "git add .",
+            "git commit -m 'First commit'",
+            "git remote add origin remote repository URL",
+            "git push -u origin master"
+        ]
+    },
+    "steps2": {
+        "stepList": [
+            "将本地仓库初始化为git",
+            "将文件添加到本地仓库中,将它们暂存为第一次提交",
+            "提交本地仓库中暂存的文件",
+            "添加本地仓库推送到远程仓库的URL",
+            "将远程仓库的提交与本地仓库合并",
+            "将本地仓库的修改推送到远程仓库"
+        ],
+        "contentList": [
+            "git init",
+            "git add .",
+            "git commit -m 'First commit'",
+            "git remote add origin remote repository URL",
+            "git pull origin master --allow-unrelated-histories",
+            "git push -u origin master"
+        ]
+    }
+}

@@ -4,14 +4,13 @@ import {
     Typography,
     Steps
 } from 'antd'
-const { Text } = Typography
+const { Text, Paragraph } = Typography
 const { Step } = Steps
 
 function StepList(props) {
     const [current, setCurrent] = useState(0)
 
     const onChange = value => {
-        console.log('onChange:', value);
         setCurrent(value);
     };
 
@@ -21,10 +20,26 @@ function StepList(props) {
         }
         console.log(value)
 
-        if (value.startsWith('.') || value.startsWith('/') || value.startsWith('http') || value.startsWith('https')) {
+        if (value.endsWith('.jpg') || value.endsWith('.png') || value.endsWith('.jpeg') || value.endsWith('.gif')) {
             return true
         }
         return false
+    }
+
+    const formatContent = content => {
+        if (!content) {
+            return <div></div>
+        }
+
+        if (isPic(content)) {
+            return <img src={props.contentList[current]} />
+        } else if (content.includes('\n')) {
+            return content.split('\n').map(item => {
+                return <Paragraph code copyable>{item}</Paragraph>
+            })
+        } else {
+            return <Paragraph code copyable>{content}</Paragraph>
+        }
     }
 
     return (
@@ -34,8 +49,7 @@ function StepList(props) {
                     return <Step key={index} title={item.title || `Step${index + 1}`} subTitle={item.subTitle || ''} description={item.title ? item.description : item} />
                 })}
             </Steps>
-            {isPic(props.contentList[current]) ? <img src={props.contentList[current]} /> : <Text code copyable>{props.contentList[current]}</Text>}
-
+            {formatContent(props.contentList[current])}
         </div>
     )
 }

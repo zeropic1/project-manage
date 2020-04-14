@@ -32,20 +32,16 @@ function AppSider(props) {
                     <Link to={{
                         pathname: '/git',
                     }}>
-                        <span className="nav-text">git</span>
+                        <span className="nav-text">Git</span>
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
                     <VideoCameraOutlined />
-                    <span className="nav-text">nav 2</span>
-                </Menu.Item>
-                <Menu.Item key="3">
-                    <UploadOutlined />
-                    <span className="nav-text">nav 3</span>
-                </Menu.Item>
-                <Menu.Item key="4">
-                    <UserOutlined />
-                    <span className="nav-text">nav 4</span>
+                    <Link to={{
+                        pathname: '/os',
+                    }}>
+                        <span className="nav-text">OS</span>
+                    </Link>
                 </Menu.Item>
             </Menu>
         </Sider>

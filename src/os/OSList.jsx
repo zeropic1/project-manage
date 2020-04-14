@@ -4,11 +4,11 @@ import {
     ListView
 } from '../component'
 
-function GitList(props) {
+function OSList(props) {
     const list = [
         {
-            title: 'Github',
-            path: '/git/github'
+            title: 'Mac',
+            path: '/os/mac'
         }
     ]
 
@@ -17,9 +17,9 @@ function GitList(props) {
     )
 }
 
-GitList.propTypes = {
+OSList.propTypes = {
 
 }
 
-export default GitList
+export default OSList
 

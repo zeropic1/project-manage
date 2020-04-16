@@ -4,11 +4,11 @@ import {
     RouterListView
 } from 'cl9-docs-component'
 
-function OSList(props) {
+function NpmList(props) {
     const list = [
         {
-            title: 'Mac',
-            path: '/os/mac'
+            title: 'Publish',
+            path: '/npm/publish'
         }
     ]
 
@@ -17,9 +17,9 @@ function OSList(props) {
     )
 }
 
-OSList.propTypes = {
+NpmList.propTypes = {
 
 }
 
-export default OSList
+export default NpmList
 

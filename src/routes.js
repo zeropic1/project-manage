@@ -10,6 +10,11 @@ import {
     Homebrew,
     Zsh
 } from './os'
+import {
+    NpmList,
+    PublishList,
+    PublishReact
+} from './npm'
 import Main from './Main'
 
 export default [{
@@ -56,5 +61,20 @@ export default [{
         path: "/os/mac/zsh",
         name: "Zsh",
         Component: Zsh
+    },
+    {
+        path: "/npm",
+        name: "Npm",
+        Component: NpmList
+    },
+    {
+        path: "/npm/publish",
+        name: "PublishList",
+        Component: PublishList
+    },
+    {
+        path: "/npm/publish/react",
+        name: "PublishReact",
+        Component: PublishReact
     }
 ];

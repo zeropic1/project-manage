@@ -5,7 +5,7 @@ import {
 } from 'antd'
 import {
     StepList
-} from '../../../component'
+} from 'cl9-docs-component'
 import {
     data
 } from './StepData'

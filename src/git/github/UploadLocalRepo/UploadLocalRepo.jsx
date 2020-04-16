@@ -6,7 +6,7 @@ import {
 import './index.css'
 import {
     StepList
-} from '../../../component'
+} from 'cl9-docs-component'
 const { Title } = Typography
 
 function UploadLocalRepo(props) {

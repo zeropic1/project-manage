@@ -43,6 +43,14 @@ function AppSider(props) {
                         <span className="nav-text">OS</span>
                     </Link>
                 </Menu.Item>
+                <Menu.Item key="3">
+                    <VideoCameraOutlined />
+                    <Link to={{
+                        pathname: '/npm',
+                    }}>
+                        <span className="nav-text">NPM</span>
+                    </Link>
+                </Menu.Item>
             </Menu>
         </Sider>
     )

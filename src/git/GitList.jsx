@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-    ListView
-} from '../component'
+    RouterListView
+} from 'cl9-docs-component'
 
 function GitList(props) {
     const list = [
@@ -13,7 +13,7 @@ function GitList(props) {
     ]
 
     return (
-        <ListView list={list} />
+        <RouterListView list={list} />
     )
 }
 

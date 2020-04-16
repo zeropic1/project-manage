@@ -8,7 +8,6 @@ import {
     Switch,
     Route,
 } from 'react-router-dom'
-import routes from "./routes";
 const { Content } = Layout
 
 function AppContent(props) {
@@ -16,8 +15,8 @@ function AppContent(props) {
         <Content style={{ margin: '24px 16px 0' }}>
             <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                 <Switch>
-                  {routes.map(({ path, Component }, key) => (
-                    <Route exact path={path} key={key} render={Component} />
+                  {props.routes.map(({ path, component }, key) => (
+                    <Route exact path={path} key={key} render={component} />
                   ))}
                 </Switch>
             </div>
@@ -26,7 +25,10 @@ function AppContent(props) {
 }
 
 AppContent.propTypes = {
-
+    routes: PropTypes.arrayOf(PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      component: PropTypes.elementType.isRequired
+    }))
 }
 
 export default AppContent

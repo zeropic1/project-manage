@@ -1,80 +1,89 @@
 import {
     UploadLocalRepo,
     CoordinateWorkFlow,
-    GitList,
     GithubList
 } from './git'
 import {
-    OSList,
     MacList,
     Homebrew,
     Zsh
 } from './os'
 import {
-    NpmList,
     PublishList,
     PublishReact
 } from './npm'
 import Main from './Main'
 
+export const sideRoutes = [{
+  name: "Git",
+  menus: [
+    {
+      path: "/git/github",
+      name: "Github",
+    }
+  ]
+},{
+  name: "OS",
+  menus: [
+    {
+      path: "/os/mac",
+      name: "Mac",
+    },
+  ]
+},{
+  name: "Npm",
+  menus: [
+    {
+      path: "/npm/publish",
+      name: "Publish",
+    },
+  ]
+}
+]
+
 export default [{
         path: "/",
         name: "Main",
-        Component: Main
-    },
-    {
-        path: "/git",
-        name: "Git",
-        Component: GitList
+        component: Main
     },
     {
         path: "/git/github",
         name: "Github",
-        Component: GithubList
+        component: GithubList
     },
     {
         path: "/git/github/uploadLocalRepo",
         name: "UploadLocalRepo",
-        Component: UploadLocalRepo
+        component: UploadLocalRepo
     },
     {
         path: "/git/github/coordinateWorkFlow",
         name: "CoordinateWorkFlow",
-        Component: CoordinateWorkFlow
-    },
-    {
-        path: "/os",
-        name: "OS",
-        Component: OSList
+        component: CoordinateWorkFlow
     },
     {
         path: "/os/mac",
         name: "Mac",
-        Component: MacList
+        component: MacList
     },
     {
         path: "/os/mac/homebrew",
         name: "Homebrew",
-        Component: Homebrew
+        component: Homebrew
     },
     {
         path: "/os/mac/zsh",
         name: "Zsh",
-        Component: Zsh
-    },
-    {
-        path: "/npm",
-        name: "Npm",
-        Component: NpmList
+        component: Zsh
     },
     {
         path: "/npm/publish",
-        name: "PublishList",
-        Component: PublishList
+        name: "Publish",
+        component: PublishList
     },
     {
         path: "/npm/publish/react",
         name: "PublishReact",
-        Component: PublishReact
+        component: PublishReact
     }
 ];

@@ -16,10 +16,22 @@ export const data = {
                 title: "Step5 设置Webpack,添加webpack.config.js",
                 subTitle: "1. 通过bable-loader转译.js和.jsx文件 2. 通过css-loader和style-loader解决样式依赖 3. 使用html-webpack-plugin导入scripts 4. 本地服务端口号设置为3001"
             },
-            "修改package.json提供发布到npm之后的入口文件",
-            "修改package.json,使用peerDependency让npm在发布的程序包中不包括React，这减小了程序包的大小，并避免了在用户目标项目中具有多个版本的React的灾难。",
-            "修改package.json添加一个transpile脚本，使用该脚本使Babel转换组件源文件，并将所有assets（例如.css文件）复制到名为lib的目标文件夹中",
-            "修改package.json添加一个prepublishOnly脚本，便于在每次使用npm publish发布时自动执行transpile脚本",
+            {
+              title:"Step6.1 修改package.json",
+              subTitle: "设置发布后npm导入使用的入口文件"
+            },
+            {
+              title:"Step6.2 修改package.json",
+              subTitle: "使用peerDependency让npm在发布的程序包中不包括React，这减小了程序包的大小，并避免了在用户目标项目中具有多个版本的React的灾难。"
+            },
+            {
+              title:"Step6.3 修改package.json",
+              subTitle: "添加一个transpile脚本，使用该脚本使Babel转换组件源文件，并将所有assets（例如.css文件）复制到名为lib的目标文件夹中"
+            },
+            {
+              title:"Step6.4 修改package.json",
+              subTitle: "添加一个prepublishOnly脚本，便于在每次使用npm publish发布时自动执行transpile脚本"
+            },
             "发布到npm"
         ],
         contentList: [{
@@ -42,7 +54,7 @@ export const data = {
                         "lib"
                     ],
                     "scripts": {
-                     "test": "echo \"Error: no test specified\" && exit 1",
+                     "test": "echo "Error: no test specified" && exit 1",
                      "start": "webpack-dev-server --mode development"
                     },
                     "author": "",,
@@ -77,12 +89,12 @@ export const data = {
                     entry: path.join(__dirname, "examples/index.jsx"),
                     module: {
                         rules: [{
-                                test: /\.(js|jsx)$/,
+                                test: /\\.(js|jsx)$/,
                                 use: "babel-loader",
                                 exclude: /node_modules/
                             },
                             {
-                                test: /\.css$/,
+                                test: /\\.css$/,
                                 use: ["style-loader", "css-loader"]
                             }
                         ]
@@ -97,7 +109,11 @@ export const data = {
                 };
                 `
             },
-            '"main": "./lib/index.js"',
+            {
+              code: `
+              "main": "./lib/index.js"
+              `
+            },
             {
                 code: `
                 "peerDependencies": {

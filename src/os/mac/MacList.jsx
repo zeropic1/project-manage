@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {
     RouterListView
 } from 'cl9-docs-component'
@@ -19,10 +18,6 @@ function MacList(props) {
     return (
         <RouterListView list={list} />
     )
-}
-
-MacList.propTypes = {
-
 }
 
 export default MacList

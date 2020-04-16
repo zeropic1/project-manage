@@ -5,59 +5,61 @@ import {
     Menu
 } from 'antd'
 import {
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined
-} from '@ant-design/icons'
+  UserOutlined,
+  LaptopOutlined,
+} from '@ant-design/icons';
 import {
-    Link
+  Link
 } from 'react-router-dom'
+import './App.css'
 const { Sider } = Layout
+const { SubMenu } = Menu;
 
 function AppSider(props) {
     return (
-        <Sider
-            breakpoint="lg"
-            collapsedWidth="0"
-            onBreakpoint={broken => {
-                console.log(broken);
-            }}
-            onCollapse={(collapsed, type) => {
-                console.log(collapsed, type);
-            }}
-        >
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                <Menu.Item key="1">
-                    <UserOutlined />
-                    <Link to={{
-                        pathname: '/git',
-                    }}>
-                        <span className="nav-text">Git</span>
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="2">
-                    <VideoCameraOutlined />
-                    <Link to={{
-                        pathname: '/os',
-                    }}>
-                        <span className="nav-text">OS</span>
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="3">
-                    <VideoCameraOutlined />
-                    <Link to={{
-                        pathname: '/npm',
-                    }}>
-                        <span className="nav-text">NPM</span>
-                    </Link>
-                </Menu.Item>
+      <Sider className="site-layout-background" width={200}>
+            <Menu
+                mode="inline"
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                style={{ height: '100%' }}
+            >
+                {props.routes.map(({name, menus}, index) => {
+                  return <SubMenu
+                      key={`sub${index + 1}`}
+                      title={
+                          <span>
+                              <LaptopOutlined />
+                            {name}
+                          </span>
+                      }
+                  >
+                    {menus.map(({path, name}, menuIndex) => {
+                      return <Menu.Item key={`sub${index + 1}-${menuIndex + 1}`}>
+                          <UserOutlined />
+                          <Link to={{
+                              pathname: path,
+                          }}>
+                              <span className="nav-text">{name}</span>
+                          </Link>
+                      </Menu.Item>
+                    })}
+                  </SubMenu>
+                })}
             </Menu>
         </Sider>
     )
 }
 
 AppSider.propTypes = {
-
+  routes: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    path: PropTypes.string,
+    menus: PropTypes.arrayOf(PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      component: PropTypes.elementType.isRequired
+    }))
+  })).isRequired
 }
 
 export default AppSider

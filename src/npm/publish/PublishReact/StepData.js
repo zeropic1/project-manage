@@ -17,20 +17,20 @@ export const data = {
                 subTitle: "1. 通过bable-loader转译.js和.jsx文件 2. 通过css-loader和style-loader解决样式依赖 3. 使用html-webpack-plugin导入scripts 4. 本地服务端口号设置为3001"
             },
             {
-              title:"Step6.1 修改package.json",
-              subTitle: "设置发布后npm导入使用的入口文件"
+                title: "Step6.1 修改package.json",
+                subTitle: "设置发布后npm导入使用的入口文件"
             },
             {
-              title:"Step6.2 修改package.json",
-              subTitle: "使用peerDependency让npm在发布的程序包中不包括React，这减小了程序包的大小，并避免了在用户目标项目中具有多个版本的React的灾难。"
+                title: "Step6.2 修改package.json",
+                subTitle: "使用peerDependency让npm在发布的程序包中不包括React，这减小了程序包的大小，并避免了在用户目标项目中具有多个版本的React的灾难。"
             },
             {
-              title:"Step6.3 修改package.json",
-              subTitle: "添加一个transpile脚本，使用该脚本使Babel转换组件源文件，并将所有assets（例如.css文件）复制到名为lib的目标文件夹中"
+                title: "Step6.3 修改package.json",
+                subTitle: "添加一个transpile脚本，使用该脚本使Babel转换组件源文件，并将所有assets（例如.css文件）复制到名为lib的目标文件夹中"
             },
             {
-              title:"Step6.4 修改package.json",
-              subTitle: "添加一个prepublishOnly脚本，便于在每次使用npm publish发布时自动执行transpile脚本"
+                title: "Step6.4 修改package.json",
+                subTitle: "添加一个prepublishOnly脚本，便于在每次使用npm publish发布时自动执行transpile脚本"
             },
             "发布到npm"
         ],
@@ -110,7 +110,7 @@ export const data = {
                 `
             },
             {
-              code: `
+                code: `
               "main": "./lib/index.js"
               `
             },
@@ -126,7 +126,7 @@ export const data = {
                 code: `
                 "scripts": {
                     ...
-                    "transpile": "babel src/component -d lib",
+                    "transpile": "babel src/component -d lib --copy-files",
                 },
             `
             },

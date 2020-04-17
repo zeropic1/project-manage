@@ -14,33 +14,6 @@ import {
 } from './npm'
 import Main from './Main'
 
-export const sideRoutes = [{
-  name: "Git",
-  menus: [
-    {
-      path: "/git/github",
-      name: "Github",
-    }
-  ]
-},{
-  name: "OS",
-  menus: [
-    {
-      path: "/os/mac",
-      name: "Mac",
-    },
-  ]
-},{
-  name: "Npm",
-  menus: [
-    {
-      path: "/npm/publish",
-      name: "Publish",
-    },
-  ]
-}
-]
-
 export default [{
         path: "/",
         name: "Main",

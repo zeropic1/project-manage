@@ -3,7 +3,7 @@ import {
   LaptopOutlined,
   AppleOutlined,
   GithubOutlined,
-  UploadOutlined
+  UploadOutlined,
 } from '@ant-design/icons'
 
 export default [
@@ -14,14 +14,14 @@ export default [
       {
         path: '/git/github',
         name: 'Github',
-        icon: <GithubOutlined />
+        icon: <GithubOutlined />,
       },
       {
         path: '/git/command',
         name: 'Command',
-        icon: <GithubOutlined />
-      }
-    ]
+        icon: <GithubOutlined />,
+      },
+    ],
   },
   {
     name: 'OS',
@@ -30,9 +30,9 @@ export default [
       {
         path: '/os/mac',
         name: 'Mac',
-        icon: <AppleOutlined />
-      }
-    ]
+        icon: <AppleOutlined />,
+      },
+    ],
   },
   {
     name: 'NPM',
@@ -41,8 +41,19 @@ export default [
       {
         path: '/npm/publish',
         name: 'Publish',
-        icon: <UploadOutlined />
-      }
-    ]
-  }
+        icon: <UploadOutlined />,
+      },
+    ],
+  },
+  {
+    name: 'Network',
+    icon: <LaptopOutlined />,
+    menus: [
+      {
+        path: '/network/http',
+        name: 'HTTP',
+        icon: <UploadOutlined />,
+      },
+    ],
+  },
 ]
